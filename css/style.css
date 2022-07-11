@@ -1,0 +1,145 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  min-height: 100vh;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.5;
+  scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
+}
+
+h1, h2, h3, h4 {
+  line-height: 1.1;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button, input {
+  font: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  max-width: 90%;
+  margin-inline: auto;
+  padding: 1.2rem;
+}
+
+.flow > *:where(:not(:first-child)) {
+  margin-top: 1rem;
+}
+
+.navbar {
+  color: hsl(0deg, 0%, 40%);
+  padding-block: 1.2rem;
+  max-height: 8rem;
+  overflow: hidden;
+  transition: all 0.25s ease-in-out;
+}
+.navbar__menu {
+  opacity: 0;
+}
+.navbar__container {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.navbar__logo {
+  width: 16rem;
+}
+.navbar__toggle-btn {
+  align-items: center;
+  background-color: transparent;
+  border-radius: 0.5rem;
+  border: 1px solid hsl(0deg, 0%, 40%);
+  display: flex;
+  font-size: 2.6rem;
+  justify-content: center;
+  padding-inline: 1rem;
+  position: relative;
+}
+.navbar__toggle-btn > .navbar__toggle-close {
+  display: none;
+  position: absolute;
+}
+.navbar__list {
+  font-size: 1.6rem;
+  font-weight: 500;
+  list-style: none;
+  margin-block: 1.4rem;
+  text-align: center;
+}
+.navbar__list-item {
+  margin-block: 2.2rem;
+  transition: color 0.25s ease;
+}
+.navbar__list-item:hover {
+  color: hsl(0deg, 89%, 65%);
+}
+.navbar__list .active {
+  color: hsl(0deg, 89%, 65%);
+}
+.navbar__form {
+  border-radius: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 1rem;
+}
+.navbar__form > i {
+  font-size: 2rem;
+  font-weight: 700;
+  padding-inline: 0.6rem;
+}
+.navbar__form-cart {
+  position: relative;
+}
+.navbar__form-cart::after {
+  align-items: center;
+  aspect-ratio: 1;
+  background-color: hsl(0deg, 89%, 65%);
+  border-radius: 50%;
+  box-shadow: rgba(245, 86, 86, 0.5) 0px 3px 8px;
+  color: hsl(0deg, 82%, 98%);
+  content: "2";
+  display: flex;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.4rem;
+  height: 3rem;
+  justify-content: center;
+  position: absolute;
+  right: -18px;
+  top: -18px;
+}
+.navbar__form-input {
+  border: none;
+  padding-inline: 0.5rem;
+  width: 100%;
+}
+.navbar__form-input:focus {
+  outline: none;
+}
+
+.menu-visible {
+  max-height: 100%;
+}
+.menu-visible .navbar__menu {
+  opacity: 1;
+}
