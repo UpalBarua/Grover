@@ -6,6 +6,7 @@
   transition: all .25s ease-in-out;
 
   &__menu {
+    min-width: 100%;
     opacity: 0;
   }
 
@@ -14,6 +15,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    border: 2px solid lime;
   }
 
   &__logo {
@@ -30,10 +32,10 @@
     justify-content: center;
     padding-inline: 1rem;
     position: relative;
-
+    cursor: pointer;
+    
     & > .navbar__toggle-close {
       display: none;
-      position: absolute;
     }
   }
 
@@ -45,14 +47,18 @@
     text-align: center;
 
     &-item {
-      margin-block: 2.2rem;
-      transition: color .25s ease;
-      
-      &:hover {
-        color: $clr-accent;
-      }
+      margin-block: 2.2rem;      
     }
 
+    &-link {
+      transition: color .25s ease;
+      &:hover,
+      &:focus {
+        color: $clr-accent;
+        outline: none;
+      }
+    }
+    
     & .active {
       color: $clr-accent;
     }
@@ -64,6 +70,12 @@
     display: flex;
     justify-content: space-evenly;
     padding: 1rem;
+    width: 80%;
+    margin-inline: auto;
+
+    @include for-desktop {
+      width: 50%;
+    }
 
     & > i {
       font-size: 2rem;
@@ -110,5 +122,48 @@
 
   .navbar__menu {
     opacity: 1;
+  }
+
+  .navbar__toggle-open {
+    display: none;
+  }
+
+  .navbar__toggle-close {
+    display: block;
+  }
+}
+
+@include for-desktop {
+  .navbar {
+    max-height: 100%;
+    position: relative;
+
+    &__container {
+      flex-wrap: initial;
+      align-items: center;
+    }
+
+    &__menu {
+      opacity: 1;
+      min-width: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+    }
+
+    &__list {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3rem;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &__toggle-btn {
+      display: none;
+    }
   }
 }
