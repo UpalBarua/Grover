@@ -43,7 +43,7 @@
   &__btn-group {
     align-items: center;
     display: flex;
-    gap: 1rem;
+    gap: 1.6rem;
     justify-content: center;
 
     & .hero__btn {
@@ -57,12 +57,12 @@
         justify-content: center;
         width: 6.4rem;
       }
-  
+
       &:last-child {
         background-color: transparent;
         border: none;
         color: $clr-dark;
-  
+
         &:hover,
         &:focus {
           opacity: 70%;
