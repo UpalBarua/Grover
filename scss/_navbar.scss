@@ -1,21 +1,15 @@
 .navbar {
   color: $clr-light-alt;
-  padding-block: 1.2rem;
   max-height: 8rem;
   overflow: hidden;
-  transition: all .25s ease-in-out;
-
-  &__menu {
-    min-width: 100%;
-    opacity: 0;
-  }
+  padding-block: 1.2rem;
+  transition: all 0.25s ease-in-out;
 
   &__container {
     align-items: center;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    border: 2px solid lime;
   }
 
   &__logo {
@@ -27,16 +21,21 @@
     background-color: transparent;
     border-radius: $border-radius;
     border: 1px solid $clr-light-alt;
+    cursor: pointer;
     display: flex;
     font-size: 2.6rem;
     justify-content: center;
     padding-inline: 1rem;
     position: relative;
-    cursor: pointer;
-    
+
     & > .navbar__toggle-close {
       display: none;
     }
+  }
+
+  &__menu {
+    min-width: 100%;
+    opacity: 0;
   }
 
   &__list {
@@ -47,18 +46,18 @@
     text-align: center;
 
     &-item {
-      margin-block: 2.2rem;      
+      margin-block: 2.2rem;
     }
 
     &-link {
-      transition: color .25s ease;
+      transition: color 0.25s ease;
       &:hover,
       &:focus {
         color: $clr-accent;
         outline: none;
       }
     }
-    
+
     & .active {
       color: $clr-accent;
     }
@@ -69,18 +68,19 @@
     box-shadow: $box-shadow;
     display: flex;
     justify-content: space-evenly;
-    padding: 1rem;
-    width: 80%;
     margin-inline: auto;
+    padding: 1rem;
+    width: 90%;
 
     @include for-desktop {
+      margin-right: 1rem;
       width: 50%;
     }
 
     & > i {
       font-size: 2rem;
       font-weight: 700;
-      padding-inline: .6rem;
+      padding-inline: 0.6rem;
     }
 
     &-cart {
@@ -91,7 +91,7 @@
         aspect-ratio: 1;
         background-color: $clr-accent;
         border-radius: 50%;
-        box-shadow: rgba(245, 86, 86, 0.50) 0px 3px 8px;
+        box-shadow: rgba(245, 86, 86, 0.5) 0px 3px 8px;
         color: $clr-light;
         content: '2';
         display: flex;
@@ -107,11 +107,14 @@
 
     &-input {
       border: none;
-      padding-inline: .5rem;
+      padding-inline: 0.5rem;
       width: 100%;
 
-      &:focus {
+      &:focus,
+      &:focus::placeholder {
+        opacity: 0;
         outline: none;
+        transition: opacity 0.25s ease;
       }
     }
   }
@@ -139,26 +142,25 @@
     position: relative;
 
     &__container {
-      flex-wrap: initial;
       align-items: center;
+      flex-wrap: initial;
     }
 
     &__menu {
-      opacity: 1;
-      min-width: auto;
-      display: flex;
       align-items: center;
+      display: flex;
       justify-content: space-between;
-
+      min-width: auto;
+      opacity: 1;
     }
 
     &__list {
-      display: flex;
       align-items: center;
-      justify-content: center;
+      display: flex;
       gap: 3rem;
-      position: absolute;
+      justify-content: center;
       left: 50%;
+      position: absolute;
       transform: translateX(-50%);
     }
 

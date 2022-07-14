@@ -1,18 +1,22 @@
 .hero {
   &__container {
     display: grid;
-    grid-template-columns: 1fr;
     gap: 2rem;
+    grid-template-columns: 1fr;
+    padding-block: 2rem;
+    padding-bottom: 6rem;
 
     @include for-desktop {
       grid-template-columns: 1fr 1fr;
+      padding-block: 5rem;
+      padding-bottom: 8rem;
     }
   }
 
   &__container-top {
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
     text-align: center;
 
@@ -23,47 +27,47 @@
   }
 
   &__more-container {
-    background-color: $clr-light;
-    display: flex;
     align-items: center;
-    justify-content: center;
+    background-color: $clr-light;
+    border-radius: 5rem;
     color: $clr-accent;
-    gap: 1rem;
+    display: flex;
     font-weight: 500;
+    gap: 1rem;
+    justify-content: center;
     padding: 1.2rem 1.8rem;
     width: max-content;
-    // margin-inline: auto;
-    border-radius: 5rem;
+    box-shadow: $box-shadow;
   }
 
   &__btn-group {
-    display: flex;
     align-items: center;
-    justify-content: center;
+    display: flex;
     gap: 1rem;
+    justify-content: center;
 
-    & .hero__btn:nth-child(2) {
+    & .hero__btn {
       box-shadow: $box-shadow;
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 6.4rem;
-      aspect-ratio: 1;
-    }
 
-    & .hero__btn:last-child {
-      background-color: transparent;
-      color: $clr-dark;
-      border: none;
-
-
-      &:hover,
-      &:focus {
-        opacity: 70%;
+      &:nth-child(2) {
+        align-items: center;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        width: 6.4rem;
       }
-
+  
+      &:last-child {
+        background-color: transparent;
+        border: none;
+        color: $clr-dark;
+  
+        &:hover,
+        &:focus {
+          opacity: 70%;
+        }
+      }
     }
-    
   }
 }
